@@ -41,7 +41,12 @@ namespace Methods
             EndOfScript();
             //3.Write a method that returns the English name of the last digit of a
             //given number. Example: for 512 prints "two"; for 1024 -> "four".
+            Console.WriteLine("EX3: Method that returns the English name of the last digit.");
+            Console.Write("Enter number: ");
+            string number = Console.ReadLine();
+            Console.WriteLine($"The last entered number in the number {number} is {GetNumberName(int.Parse(number.Substring(number.Length - 1,1)))}.");
 
+            EndOfScript();
             //4.Write a method that finds how many times certain number can be
             //found in a given array. Write a program to test that the method works
             //correctly.
@@ -112,11 +117,23 @@ namespace Methods
             }
         }
 
+        //3.Write a method that returns the English name of the last digit of a
+        //given number. Example: for 512 prints "two"; for 1024 -> "four".
+        static string GetNumberName(int number)
+        {
+            string[] numberNames = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            return numberNames[number];
+        }
+
+        //4.Write a method that finds how many times certain number can be
+        //found in a given array. Write a program to test that the method works
+        //correctly.
+        
 
         //support methods
         static void EndOfScript ()
         {
-            Console.WriteLine(new String('#', 80));
+            Console.WriteLine(new string('#', 80));
             Console.WriteLine();
         }
     }
